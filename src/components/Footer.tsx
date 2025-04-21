@@ -10,7 +10,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} Created by{' '}
           <Link
-            href="https://itaycode.com"
+            href="https://www.linkedin.com/in/itayhaephrati/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[var(--primary)] transition-colors"
