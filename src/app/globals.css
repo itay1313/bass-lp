@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   background: var(--bg);
@@ -18,7 +20,7 @@ html[data-theme='dark'] {
   --bg: #ffffff;
   --text: #1a1a1a;
   --button-text: #1a1a1a;
-  --primary: rgb(161, 255, 20);
+  --primary: #31e981;
   --primary-dark: rgb(129, 204, 16);
 
   /* UI colors */

@@ -28,15 +28,15 @@ function BassModel({ position = [-3, 0, 0], rotationOffset = 0 }: BassModelProps
 
   return (
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.4}>
-      <mesh ref={meshRef} scale={[1, 1, 1]} position={position}>
+      <mesh ref={meshRef} scale={[3, 1, 1]} position={position}>
         <planeGeometry args={[1, 2.5]} />
         <meshStandardMaterial
           map={texture}
           transparent
-          opacity={0.95}
+          opacity={0.9}
           emissive={[0.2, 1, 0]}
-          emissiveIntensity={theme === 'dark' ? 0.3 : 0.1}
-          metalness={0.2}
+          emissiveIntensity={0.06}
+          metalness={0.1}
           roughness={0.8}
           color={theme === 'dark' ? '#ffffff' : '#a1ff14'}
         />
