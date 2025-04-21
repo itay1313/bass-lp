@@ -23,7 +23,7 @@ export default function Hero() {
       />
 
       {/* 3D Scene */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0 z-10 hidden md:block">
         <Suspense fallback={null}>
           <BassScene />
         </Suspense>
@@ -68,6 +68,15 @@ export default function Hero() {
               <span className="absolute inset-0 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-[rgba(161,255,20,0.2)] group-hover:blur-md" />
               <span className="relative">Find Your Bass</span>
             </button>
+          </div>
+
+          {/* Mobile Bass Scene */}
+          <div className="block md:hidden w-full h-[500px] relative mt-8 -mx-4">
+            <div className="absolute inset-0 w-full">
+              <Suspense fallback={null}>
+                <BassScene />
+              </Suspense>
+            </div>
           </div>
 
           {/* Decorative Elements */}
