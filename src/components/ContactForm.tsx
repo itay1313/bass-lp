@@ -87,8 +87,15 @@ export default function ContactForm() {
 
   return (
     <div className="relative" id="contact-form">
-      <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[var(--bg)] to-transparent z-0" />
-      <div className="container mx-auto px-4 py-16 max-w-lg">
+      {/* Gradient Background */}
+      <div
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="container mx-auto px-4 py-16 max-w-lg relative">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4" style={{ color: 'var(--text)' }}>
             {translations.title}
@@ -96,104 +103,119 @@ export default function ContactForm() {
           <p style={{ color: 'var(--text-subtle)' }}>{translations.subtitle}</p>
         </div>
 
-        <div className="rounded-xl shadow-lg p-6 md:p-8" style={{ background: 'var(--surface)' }}>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium mb-2"
-                style={{ color: 'var(--text)' }}
-              >
-                {translations.name}
-              </label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={e => setFormData({ ...formData, name: e.target.value })}
-                placeholder={translations.namePlaceholder}
-                required
-                className="w-full px-4 py-2 rounded-lg text-start"
-                style={{
-                  background: 'var(--bg)',
-                  color: 'var(--text)',
-                  border: '1px solid var(--border)',
-                }}
-              />
-            </div>
+        <div className="relative">
+          {/* Background Pattern */}
+          <div
+            className="absolute inset-0 z-0 opacity-30"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0)',
+              backgroundSize: '40px 40px',
+            }}
+          />
 
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium mb-2"
-                style={{ color: 'var(--text)' }}
-              >
-                {translations.email}
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={e => setFormData({ ...formData, email: e.target.value })}
-                placeholder={translations.emailPlaceholder}
-                required
-                className="w-full px-4 py-2 rounded-lg text-start"
-                style={{
-                  background: 'var(--bg)',
-                  color: 'var(--text)',
-                  border: '1px solid var(--border)',
-                }}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2"
-                style={{ color: 'var(--text)' }}
-              >
-                {translations.message}
-              </label>
-              <textarea
-                id="message"
-                value={formData.message}
-                onChange={e => setFormData({ ...formData, message: e.target.value })}
-                placeholder={translations.messagePlaceholder}
-                required
-                rows={4}
-                className="w-full px-4 py-2 rounded-lg resize-none text-start"
-                style={{
-                  background: 'var(--bg)',
-                  color: 'var(--text)',
-                  border: '1px solid var(--border)',
-                }}
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="w-full px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 z-10 relative group transition-all duration-300 cursor-pointer"
-              style={{
-                background: 'var(--primary)',
-                color: 'var(--button-text)',
-              }}
-            >
-              {status === 'loading' ? translations.sending : translations.send}
-            </button>
-
-            {status === 'success' && (
-              <div className="text-center" style={{ color: 'var(--add-green)' }} role="alert">
-                {translations.success}
+          <div
+            className="rounded-xl shadow-lg p-6 md:p-8 relative z-10 backdrop-blur-sm"
+            style={{ background: 'var(--surface)' }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: 'var(--text)' }}
+                >
+                  {translations.name}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={formData.name}
+                  onChange={e => setFormData({ ...formData, name: e.target.value })}
+                  placeholder={translations.namePlaceholder}
+                  required
+                  className="w-full px-4 py-2 rounded-lg text-start"
+                  style={{
+                    background: 'var(--bg)',
+                    color: 'var(--text)',
+                    border: '1px solid var(--border)',
+                  }}
+                />
               </div>
-            )}
 
-            {status === 'error' && (
-              <div className="text-center" style={{ color: 'var(--add-red)' }} role="alert">
-                {errorMessage}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: 'var(--text)' }}
+                >
+                  {translations.email}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={e => setFormData({ ...formData, email: e.target.value })}
+                  placeholder={translations.emailPlaceholder}
+                  required
+                  className="w-full px-4 py-2 rounded-lg text-start"
+                  style={{
+                    background: 'var(--bg)',
+                    color: 'var(--text)',
+                    border: '1px solid var(--border)',
+                  }}
+                />
               </div>
-            )}
-          </form>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: 'var(--text)' }}
+                >
+                  {translations.message}
+                </label>
+                <textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={e => setFormData({ ...formData, message: e.target.value })}
+                  placeholder={translations.messagePlaceholder}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg resize-none text-start"
+                  style={{
+                    background: 'var(--bg)',
+                    color: 'var(--text)',
+                    border: '1px solid var(--border)',
+                  }}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 z-10 relative group transition-all duration-300 cursor-pointer"
+                style={{
+                  background: 'var(--primary)',
+                  color: 'var(--button-text)',
+                }}
+              >
+                {status === 'loading' ? translations.sending : translations.send}
+              </button>
+
+              {status === 'success' && (
+                <div className="text-center" style={{ color: 'var(--add-green)' }} role="alert">
+                  {translations.success}
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="text-center" style={{ color: 'var(--add-red)' }} role="alert">
+                  {errorMessage}
+                </div>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </div>
