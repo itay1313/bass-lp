@@ -1,99 +1,124 @@
-# 🎸 Bass Guitar Landing Page
+## ✨ Features
 
-Hey there! 👋 Welcome to my absolutely rad bass guitar landing page. If you're wondering why I built this - well, who doesn't need a new bass guitar? 🤘
+- **Responsive Design**
 
-## 🚀 What's This All About?
+  - Mobile-first approach
+  - Optimized 3D scene for different screen sizes
+  - Fluid typography and spacing
+  - Custom mobile layout for 3D animations
 
-This isn't just another landing page. It's a whole vibe:
+- **Interactive Elements**
 
-- 🎨 Switches between light/dark mode like a boss
-- 🌟 3D bass guitar that floats around (because gravity is overrated)
-- 🎉 Throws a party (confetti!) when someone submits the form
-- 📱 Looks sweet on any device (responsive AF)
-- 🇮🇱 Handles Hebrew text like a pro (RTL support built-in)
+  - Smooth 3D bass guitar animations
+  - Dark/light theme with system preference detection
+  - Hover effects and transitions
+  - Contact form with Airtable integration
 
-## 🛠 Tech Stack
+- **Performance**
+  - Optimized 3D rendering
+  - Lazy loading for components
+  - Efficient state management
+  - SEO optimized
 
-Built with some pretty cool stuff:
+## 🛠️ Installation
 
-```bash
-Next.js + TypeScript + Three.js + Tailwind CSS = 🔥
-```
-
-Plus some extra goodies:
-
-- 🎨 next-themes for that sweet dark mode
-- 🎸 @react-three/fiber & drei for the floating bass
-- 🎉 canvas-confetti because why not?
-- 📊 Airtable for form submissions (keeping it organized)
-
-## 🏃‍♂️ Want to Run This Bad Boy?
-
-1. Clone it:
+1. Clone the repository:
 
 ```bash
-git clone [your-repo-url]
-cd [your-repo-name]
+git clone https://github.com/itay1313/bass-landing-page.git
 ```
 
-2. Install the goods:
+2. Install dependencies:
 
 ```bash
 npm install
+# or
+yarn install
 ```
 
-3. Set up your `.env.local`:
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Add your API keys:
 
 ```env
-AIRTABLE_API_KEY=your_key_here
-AIRTABLE_BASE_ID=your_base_id_here
+NEXT_PUBLIC_AIRTABLE_API_KEY=your_airtable_key
+NEXT_PUBLIC_AIRTABLE_BASE_ID=your_base_id
 ```
 
-4. Fire it up:
+5. Run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-5. Check it out at [http://localhost:3000](http://localhost:3000) 🚀
+## 🌐 Environment Variables
 
-## 🎯 Features That Slap
+Required environment variables:
 
-- 🌓 **Theme Switcher**: Dark mode so smooth it'll make your eyes happy
-- 🎸 **3D Bass**: A floating bass guitar that's just vibing
-- 📝 **Smart Form**: Validates your input and looks good doing it
-- 🎊 **Success Celebration**: Throws confetti when you submit (because forms should be fun)
-- 🔄 **Smooth Scrolling**: Glides like butter when you click that CTA
-- 📱 **Responsive**: Looks mint on everything from your phone to your ultrawide
+- `NEXT_PUBLIC_AIRTABLE_API_KEY` - Your Airtable API key
+- `NEXT_PUBLIC_AIRTABLE_BASE_ID` - Your Airtable base ID
 
-## 🧰 Development Goodies
+## 📱 Responsive Design
 
-Keep the code clean with:
+- Mobile-first approach with custom breakpoints
+- Optimized 3D scene for mobile devices
+- Fluid typography using Tailwind's responsive classes
+- Custom layouts for different screen sizes
+- Touch-friendly interactions
+
+## 🎨 Design System
+
+- Custom color schemes for dark/light modes
+- CSS variables for theme switching
+- Consistent spacing using Tailwind's spacing scale
+- Responsive typography with modular scale
+- Smooth transitions and animations
+- Accessible color contrast
+
+## 🔧 Development
 
 ```bash
-npm run format   # Prettier makes everything nice
-npm run lint     # Keep the code clean
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run production build
+npm start
+
+# Run linting
+npm run lint
 ```
 
-## 🤔 Why This Stack?
+## 📄 License
 
-- **Next.js**: Because we're not cavemen anymore
-- **TypeScript**: For when you want your code to actually make sense
-- **Three.js**: Makes 3D stuff look cool without breaking a sweat
-- **Tailwind**: Because writing CSS by hand is so 2010
+MIT License - feel free to use this project for your own purposes.
 
-## 🎵 Fun Facts
+## 🤝 Contributing
 
-- The floating bass guitar was inspired by my terrible attempt at actually playing bass
-- The confetti colors match the theme because attention to detail is my middle name
-- Yes, the dark mode switch is supposed to be that satisfying to click
+Contributions, issues, and feature requests are welcome!
 
-## 📝 License
+## 👤 Author
 
-Feel free to use this however you want! Just remember to star the repo if you like it 😉
+Itay Haephrati
 
----
+- UX Engineer & Design Engineer
+- GitHub: [@itay1313](https://github.com/itay1313)
+- LinkedIn: [Itay Haephrati](https://www.linkedin.com/in/itayhaephrati/)
+- Website: [itaycode.com](https://itaycode.com)
 
-Built with 🎸 and ☕️ by [Your Name]
+### Skills
 
-P.S. If you're still reading this, you probably need a new bass guitar.
+- Frontend Development (React, Next.js, TypeScript)
+- UX Engineering & Design Systems
+- 3D Web Animations (Three.js)
+- CSS Architecture
+- Responsive Design
+- Performance Optimization

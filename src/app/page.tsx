@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import ContactForm from '../components/ContactForm';
 import ThemeToggle from '../components/ThemeToggle';
 import MiddleSection from '@/components/MiddleSection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -26,6 +27,7 @@ export default function Home() {
       <Hero />
       <MiddleSection />
       <ContactForm />
+      <Footer />
     </main>
   );
 }
