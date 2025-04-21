@@ -86,7 +86,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="relative" id="contact-form">
+    <div className="relative overflow-x-hidden" id="contact-form">
       {/* Gradient Background */}
       <div
         className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl"
