@@ -284,7 +284,7 @@ export default function Home() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="w-full px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 z-10 relative group transition-all duration-300 cursor-pointer"
+              className="w-full px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10 relative group transition-all duration-300 cursor-pointer hover:scale-105"
               style={{
                 background: 'var(--primary)',
                 color: 'var(--button-text)',
