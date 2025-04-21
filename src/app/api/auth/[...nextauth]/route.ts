@@ -13,7 +13,7 @@ interface ExtendedToken extends JWT {
   accessToken?: string;
 }
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     {
       id: 'airtable',
