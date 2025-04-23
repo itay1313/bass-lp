@@ -11,8 +11,8 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: 'Contact Form',
-  description: 'A simple contact form with dark mode support',
+  title: 'Buy A Funky Bass',
+  description: 'A funky bass guitar shop landing page',
 };
 
 export default function RootLayout({
