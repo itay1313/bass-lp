@@ -1,18 +1,29 @@
 import React from 'react';
 
-const MiddleSection: React.FC = () => {
+interface MiddleSectionProps {
+  title: string;
+  description: string;
+  video: string;
+}
+
+const MiddleSection: React.FC<MiddleSectionProps> = ({ title, description, video }) => {
   return (
     <section className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-center overflow-hidden [background:var(--bg)]">
       {/* Text Content - Now on top for mobile */}
       <div className="relative lg:absolute lg:left-0 w-full lg:w-1/2 h-1/2 lg:h-full flex items-center justify-center p-6 lg:p-12 order-1 lg:order-none">
         <div className="[color:var(--text)] space-y-4 lg:space-y-6 text-center lg:text-left">
           <h2 className="text-4xl lg:text-7xl font-bold leading-tight">
-            Playing on our bass will feel{' '}
-            <span className="[color:var(--primary)]">out of this world</span>
+            {title.split(' ').map((word, index, array) =>
+              index === array.length - 1 ? (
+                <span key={index} className="[color:var(--primary)]">
+                  {word}
+                </span>
+              ) : (
+                <React.Fragment key={index}>{word} </React.Fragment>
+              )
+            )}
           </h2>
-          <p className="text-lg lg:text-xl [color:var(--text-subtle)]">
-            Experience music like never before with our revolutionary bass technology
-          </p>
+          <p className="text-lg lg:text-xl [color:var(--text-subtle)]">{description}</p>
         </div>
       </div>
 
@@ -25,7 +36,7 @@ const MiddleSection: React.FC = () => {
           playsInline
           className="w-full h-full rounded-[12.5rem] object-cover"
         >
-          <source src="/alien.mp4" type="video/mp4" />
+          <source src={video} type="video/mp4" />
         </video>
       </div>
 
